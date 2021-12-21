@@ -47,13 +47,18 @@ console.log('discount: ', discount);
 let finalPrice = totalCost;
 let appliedDiscount = 'Nessuno sconto';
 
-if (userAge < 18) {
-  /* Con massimo due decimali, il biglietto è calcolato togliendo lo sconto corretto in base al prezzo iniziale del biglietto */
-  finalPrice =  Math.round((totalCost - (discount * 20)) * 100) / 100;
-  appliedDiscount = '20%, under 18'
-} else if (userAge > 65) {
-  finalPrice =  Math.round((totalCost - (discount * 40)) * 100) / 100;
-  appliedDiscount = '40%, over 65'
+// Aggiunta validazione
+if (!isNaN(userAge) && !isNaN(userKm)) {
+  if (userAge < 18) {
+    /* Con massimo due decimali, il biglietto è calcolato togliendo lo sconto corretto in base al prezzo iniziale del biglietto */
+    finalPrice =  Math.round((totalCost - (discount * 20)) * 100) / 100;
+    appliedDiscount = '20%, under 18'
+  } else if (userAge > 65) {
+    finalPrice =  Math.round((totalCost - (discount * 40)) * 100) / 100;
+    appliedDiscount = '40%, over 65'
+  }
+} else {
+  alert('Età o KM errati');
 }
 
 console.log('finalPrice: ', finalPrice);
