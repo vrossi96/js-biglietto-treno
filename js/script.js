@@ -48,7 +48,7 @@ let finalPrice = totalCost;
 let appliedDiscount = 'Nessuno sconto';
 
 // Aggiunta validazione
-if (!isNaN(userAge) && !isNaN(userKm)) {
+if ((!isNaN(userAge) && !isNaN(userKm)) && (userAge >= 0 && userAge < 130) && (userKm > 0)) {
   if (userAge < 18) {
     /* Con massimo due decimali, il biglietto è calcolato togliendo lo sconto corretto in base al prezzo iniziale del biglietto */
     finalPrice =  Math.round((totalCost - (discount * 20)) * 100) / 100;
