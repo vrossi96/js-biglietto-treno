@@ -32,3 +32,10 @@ console.log('userAge: ', userAge);
 // * 3 Prezzo per km
 const kmPrice = 0.21;
 console.log('kmPrice: ', kmPrice);
+
+
+// Risultato prezzo
+const totalCost = Math.round((userKm * kmPrice) * 100) / 100;
+console.log('totalCost: ', totalCost);
+
+
