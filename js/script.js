@@ -14,7 +14,7 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 /* 
   1- chiedere i chilometri
   2- chiedere l'età
-  3- aggiungere prezzo per km
+  3- aggiungere prezzo per km, 0.21 per km
   4- aggiungere sconti
     4a- sconto 20% minorenni
     4b- sconto 40% over 65
@@ -28,3 +28,7 @@ console.log('userKm: ', userKm);
 // * 2 Età
 const userAge = parseInt(prompt("Inserire l'età", '18'));
 console.log('userAge: ', userAge);
+
+// * 3 Prezzo per km
+const kmPrice = 0.21;
+console.log('kmPrice: ', kmPrice);
