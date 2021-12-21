@@ -34,21 +34,39 @@ const kmPrice = 0.21;
 console.log('kmPrice: ', kmPrice);
 
 
-// Risultato prezzo
+// Risultato prezzo - con massimo due decimali
 const totalCost = Math.round((userKm * kmPrice) * 100) / 100;
 console.log('totalCost: ', totalCost);
 
+// Calcolo della percentuale del costo della tratta
 const discount = totalCost / 100;
 console.log('discount: ', discount);
 
 
 // * 4-5 Applicazione Sconti se necessario, calcolo prezzo finale
 let finalPrice = totalCost;
+let appliedDiscount = 'Nessuno sconto';
 
 if (userAge < 18) {
+  /* Con massimo due decimali, il biglietto è calcolato togliendo lo sconto corretto in base al prezzo iniziale del biglietto */
   finalPrice =  Math.round((totalCost - (discount * 20)) * 100) / 100;
+  appliedDiscount = '20%, under 18'
 } else if (userAge > 65) {
   finalPrice =  Math.round((totalCost - (discount * 40)) * 100) / 100;
+  appliedDiscount = '40%, over 65'
 }
 
 console.log('finalPrice: ', finalPrice);
+console.log('appliedDiscount: ', appliedDiscount);
+
+// Mostra risultati in pagina
+const documentKm = document.getElementById('km');
+const documentAge = document.getElementById('age');
+const showDiscount = document.getElementById('applied-discount');
+const documentPrice = document.getElementById('final-price');
+
+
+documentKm.innerText = userKm;
+documentAge.innerText = userAge;
+showDiscount.innerHTML = `${appliedDiscount} a ${totalCost}&euro;`;
+documentPrice.innerHTML = `${finalPrice}&euro;`;
