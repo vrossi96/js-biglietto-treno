@@ -21,6 +21,10 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
   5- output prezzo con massimo due decimali
 */
 
-// * 1
+// * 1 Chilometri
 const userKm = parseInt(prompt('Inserire i chilometri per il viaggio', '21'));
 console.log('userKm: ', userKm);
+
+// * 2 Età
+const userAge = parseInt(prompt("Inserire l'età", '18'));
+console.log('userAge: ', userAge);
