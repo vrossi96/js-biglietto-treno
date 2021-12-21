@@ -1,4 +1,4 @@
-console.log('JS OK')
+console.log('JS OK');
 
 /* 
 TRACCIA
@@ -20,3 +20,7 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
     4b- sconto 40% over 65
   5- output prezzo con massimo due decimali
 */
+
+// * 1
+const userKm = parseInt(prompt('Inserire i chilometri per il viaggio', '21'));
+console.log('userKm: ', userKm);
