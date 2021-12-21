@@ -38,4 +38,17 @@ console.log('kmPrice: ', kmPrice);
 const totalCost = Math.round((userKm * kmPrice) * 100) / 100;
 console.log('totalCost: ', totalCost);
 
+const discount = totalCost / 100;
+console.log('discount: ', discount);
 
+
+// * 4-5 Applicazione Sconti se necessario, calcolo prezzo finale
+let finalPrice = totalCost;
+
+if (userAge < 18) {
+  finalPrice =  Math.round((totalCost - (discount * 20)) * 100) / 100;
+} else if (userAge > 65) {
+  finalPrice =  Math.round((totalCost - (discount * 40)) * 100) / 100;
+}
+
+console.log('finalPrice: ', finalPrice);
